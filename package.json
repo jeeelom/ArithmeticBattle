@@ -1,0 +1,45 @@
+{
+    "name": "com.arithmeticbattle.project",
+    "version": "1.0.0",
+    "displayName": "Arithmetic Battle",
+    "cordova": {
+        "platforms": [
+            "android",
+            "browser"
+        ],
+        "plugins": {
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-httpd": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-dialogs": {},
+            "cordova-plugin-splashscreen": {},
+            "kr.co.joycorp.cordova.exitapp": {},
+            "cordova-plugin-bluetooth-serial": {}
+        }
+    },
+    "dependencies": {
+        "bufferutil": "^4.0.0",
+        "cordova-android": "~7.0.0",
+        "cordova-browser": "^5.0.3",
+        "cordova-ios": "^4.4.0",
+        "cordova-plugin-bluetooth-serial": "git+https://github.com/don/BluetoothSerial.git",
+        "cordova-plugin-device": "^2.0.2",
+        "cordova-plugin-dialogs": "^2.0.1",
+        "cordova-plugin-httpd": "^0.9.3",
+        "cordova-plugin-inappbrowser": "^3.0.0",
+        "cordova-plugin-splashscreen": "^5.0.2",
+        "cordova-plugin-whitelist": "^1.3.3",
+        "express": "^4.16.3",
+        "git": "^0.1.5",
+        "kr.co.joycorp.cordova.exitapp": "~1.0.0",
+        "signalhub": "^4.9.0",
+        "simple-peer": "^9.1.2",
+        "simple-signal-client": "^1.3.2",
+        "simple-signal-server": "^1.5.1",
+        "socket.io": "^2.1.1",
+        "utf-8-validate": "^4.0.2",
+        "uws": "^10.148.1",
+        "webrtc-swarm": "^2.9.0"
+    }
+}

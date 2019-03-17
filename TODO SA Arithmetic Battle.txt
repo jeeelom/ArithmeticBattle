@@ -1,0 +1,14 @@
+MGA GAGAWIN PARA KUMITA ANG ARITHMETIC BATTLE
+*Mag lagay ng in app purchases
+  -Powerups
+  1. SLow (babagal pag patak)
+  2.clear 1 lane horizontal/vertical
+  3.Next Piece queue (Limited time lang 7 days expiration)
+
+ -Designs/Custom Effects
+ 1.effect sa pag laho ng mga box
+ 2.design ng mga box
+
+*Gawing Online Multiplayer
+
+*Lagyan ng Energy yung pag lalro ng online multiplayer(Pag offline at single player lang walang bayad sa energy)

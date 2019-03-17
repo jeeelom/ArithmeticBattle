@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ARITHMETIC BATTLE</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script src="jQuery.js"></script>
+	<script src="jqm.js"></script>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="jqm.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body > 
+
+ <div class="countdown" hidden>
+			<div class="countdown-content">
+			<p class="count-num">3</p>
+			</div>
+		</div>
+
+
+	<div data-role="page" id="signal-page">
+
+	<div data-role='header' class="KGsketch transparent noborder">
+		<a class="ui-btn ui-icon-arrow-l ui-btn-icon-left transparent noborder" style="margin: 7px !important;" href="index.html#CSP" rel="external" ></a>
+		<!-- <h1 style="text-align: right !important; margin-right: 10% !important; ">Score <span id="current_score">0</span></h1> -->
+	</div>	
+
+		<div data-role="main" class="ui-content">
+<!-- buburahin 
+	 <form id="form1">
+ 		
+
+      <textarea id="incoming" ></textarea> 
+      <button type="submit" class="sendSDP">CONNECT</button>
+      
+    </form>
+
+<!-- buburahin -->
+    <p id="outgoing"  hidden ></p>
+   	
+    <!--  BLUETOOTH -->
+    	<div id="vm" class="crosshatcher"> <p> Versus Mode </p></div>
+
+    	<div id="connect"  >
+    <div data-role="fieldcontain" id="sel">
+	      <select id="deviceList" class="crosshatcher" >
+	      	<option disabled selected hidden >Choose</option>
+	      </select>
+	 </div>     
+      <br>
+      <button id="bl-list" class="ui-btn crosshatcher" >Refresh List</button>
+      <br>
+      <button id="initConn"  class="ui-btn">Initialize Connection</button>
+    </div>
+
+   	 <div id="connected" class="crosshatcher">
+      <b class="blink">Waiting Other Player</b>
+      <br><br>
+    
+  <!--    <input id="message" style="width:80%; font-size:14pt; display:block; margin-left:auto; margin-right:auto; padding:5px"></input>
+    
+      <br><br>
+    -->
+      <button id="sendSDP" class="green">CONNECT</button>
+      <br>
+      <button id="disconnect" >CANCEL</button>
+    </div>
+
+</div>
+
+  </div>
+
+
+
+	
+    <!-- END BLUETOOTH -->
+ 	
+	
+
+
+  	
+		<div class="waitingPage">
+			<div class="waiting-content">
+			<h1 class="crosshatcher blink">Initializing...</h1>
+			</div>
+		</div>
+     
+
+
+<!--- -----Server board--------  -->
+
+
+	<div data-role="page" id="versus" >
+
+
+		<div data-role='header' class="KGsketch transparent noborder">
+		<a class="ui-btn ui-icon-delete ui-btn-icon-left transparent noborder backpopup" style="margin: 7px !important;" href="#" ></a>
+	<!--- -----	<h1 style="text-align: right !important; margin-right: 10% !important; ">Score <span id="current_score">0</span></h1>  -->
+	</div>
+
+	<div data-role='main' class="ui-content">
+
+		<div data-role="controlgroup" data-type="horizontal" style="position: absolute; top: 5%; width:100%;" >
+			
+			<a id="reroll" class="ui-btn ui-btn-inline" > </a>
+			
+			<div id="answerBox" class="ui-btn ui-btn-inline" style="position: absolute; left: 50%; margin-left: -35px;"></div>	
+			
+		<!-- 	<div id="enemy">   -->
+				
+			</div>
+		</div>
+
+		<div class="eq-bar">
+		<input type="text"  id="equationBar" readonly>
+		</div>
+
+		<div id="mainBoard"></div>
+
+		<div data-role="controlgroup" data-type="horizontal"  >
+		
+			<button id="backBtn" class="ui-btn ui-btn-inline"  ></button>
+
+			<button id="goBtn" class="ui-btn ui-btn-inline" ></button>	
+
+		</div>
+	
+
+	</div>
+
+	</div>
+
+<!--- -----Server board--------  -->	
+
+
+
+
+<!--- ------------ Client Board ------  -->
+	<div data-role="page" id="versus2" >
+
+
+		<div data-role='header' class="KGsketch transparent noborder">
+		<a class="ui-btn ui-icon-delete ui-btn-icon-left transparent noborder backpopup" style="margin: 7px !important;" href="#" ></a>
+	<!--- -----	<h1 style="text-align: right !important; margin-right: 10% !important; ">Score <span id="current_score">0</span></h1>  -->
+	</div>
+
+	<div data-role='main' class="ui-content">
+
+		<div data-role="controlgroup" data-type="horizontal" style="position: absolute; top: 5%; width:100%;"  >
+			
+			<a id="reroll2" class="ui-btn ui-btn-inline" > </a>
+			
+			<div id="answerBox2" class="ui-btn ui-btn-inline" style="position: absolute; left: 50%; margin-left: -35px;"></div>	
+			
+		<!--	<div id="enemy2">  -->
+				
+			</div>
+		</div>
+
+		<div class="eq-bar">
+			<input type="text"  id="equationBar2" readonly>
+		</div>
+
+		<div id="mainBoard2"></div>
+
+		<div data-role="controlgroup" data-type="horizontal"  >
+		
+			<button id="backBtn2" class="ui-btn ui-btn-inline" ></button>
+
+			<button id="goBtn2" class="ui-btn ui-btn-inline" ></button>	
+
+		</div>
+	
+
+	</div>
+
+	</div>
+
+<!-- ----  End Client Board -->
+
+
+<!-- -------- Winner PAGE -------- -->
+		<div id="winnerp1"> 
+			<div data-role="main" class="ui-content">
+				<div id="gameOverButtonsWP1">
+				<a id="mesWP1" href="#" class="ui-btn rounded crosshatcher" >You Won!</a>
+				<a id="rematchWP1" href="#" class="ui-btn rounded crosshatcher" >REMATCH</a>
+				<a id="over_menu_btnWP1" href="#" class="ui-btn rounded crosshatcher" >MAIN MENU</a>
+				<a id="over_exit_btnWP1" href="#" class="ui-btn rounded crosshatcher" >EXIT GAME</a>
+				</div>
+			</div>
+		</div>
+			
+		<!-- -------- Winner PAGE END -------- -->
+
+
+		<!-- -------- Loser PAGE -------- -->
+		<div id="loserp1"> 
+			<div data-role="main" class="ui-content">
+				<div id="gameOverButtonsLP1">
+				<a id="mesLP1" href="#" class="ui-btn rounded crosshatcher" >You Lose</a>
+				<a id="rematchLP1" href="#" class="ui-btn rounded crosshatcher" >REMATCH</a>
+				<a id="over_menu_btnLP1" href="#" class="ui-btn rounded crosshatcher" >MAIN MENU</a>
+				<a id="over_exit_btnLP1" href="#" class="ui-btn rounded crosshatcher" >EXIT GAME</a>
+				</div>
+			</div>
+		</div>
+			
+		<!-- -------- Loser PAGE END -------- -->
+
+
+
+
+
+		<!-- -------- Winner PAGE -------- -->
+		<div id="winnerp2"> 
+			<div data-role="main" class="ui-content">
+				<div id="gameOverButtonsWP2">
+				<a id="mesWP2" href="#" class="ui-btn rounded crosshatcher" >You Won!</a>
+				<a id="rematchWP2" href="#" class="ui-btn rounded crosshatcher" >REMATCH</a>
+				<a id="over_menu_btnWP2" href="#" class="ui-btn rounded crosshatcher" >MAIN MENU</a>
+				<a id="over_exit_btnWP2" href="#" class="ui-btn rounded crosshatcher" >EXIT GAME</a>
+				</div>
+			</div>
+		</div>
+			
+		<!-- -------- Winner PAGE END -------- -->
+
+
+		<!-- -------- Loser PAGE -------- -->
+		<div id="loserp2"> 
+			<div data-role="main" class="ui-content">
+				<div id="gameOverButtonsLP2">
+				<a id="mesLP2" href="#" class="ui-btn rounded crosshatcher" >You Lose</a>
+				<a id="rematchLP2" href="#" class="ui-btn rounded crosshatcher" >REMATCH</a>
+				<a id="over_menu_btnLP2" href="#" class="ui-btn rounded crosshatcher" >MAIN MENU</a>
+				<a id="over_exit_btnLP2" href="#" class="ui-btn rounded crosshatcher" >EXIT GAME</a>
+				</div>
+			</div>
+		</div>
+			
+		<!-- -------- Loser PAGE END -------- -->
+
+
+		<!-- -----   ----- -->
+
+		<div id="ready_check" hidden > 
+			<div data-role="main" class="ui-content">
+				
+				<div id="match_ready_main">
+				
+				<a id="match_ready" href="#" class="ui-btn rounded crosshatcher" >READY</a>
+				
+				</div>
+			</div>
+		</div>
+
+		<div id="ready_check2" hidden> 
+			<div data-role="main" class="ui-content">
+				
+				<div id="match_ready_main2">
+				
+				<a id="match_ready2" href="#" class="ui-btn rounded crosshatcher" >READY</a>
+				
+				</div>
+			</div>
+		</div>
+
+<script src="bundle.js"></script>
+
+<script type="text/javascript">
+
+	
+  
+
+</script>
+
+
+
+</body>
+</html>
+
+
+

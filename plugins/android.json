@@ -1,0 +1,36 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "kr.co.joycorp.cordova.exitapp": {
+            "PACKAGE_NAME": "com.ArithmeticBattle.project"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ArithmeticBattle.project"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ArithmeticBattle.project"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.ArithmeticBattle.project"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ArithmeticBattle.project"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ArithmeticBattle.project"
+        },
+        "cordova-plugin-httpd": {
+            "PACKAGE_NAME": "com.ArithmeticBattle.project"
+        },
+        "cordova-plugin-bluetooth-serial": {
+            "PACKAGE_NAME": "com.ArithmeticBattle.project"
+        }
+    },
+    "dependent_plugins": {}
+}

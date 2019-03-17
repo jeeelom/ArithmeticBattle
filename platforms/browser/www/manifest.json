@@ -1,0 +1,17 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Arithmetic Battle",
+  "short_name": "Arithmetic Battle",
+  "version": "com.ArithmeticBattle.project",
+  "description": "Developed By Carl Jerome V. Dimailig(Lomet) Use your brain",
+  "author": "Carl Jerome Dimailig",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "start_url": "index.html"
+}

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ARITHMETIC BATTLE</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script src="jQuery.js"></script>
+	<script src="jqm.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="jqm.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+	<!-- -------- GAMEOVER PAGE -------- -->
+		<div id="gameOverPage" > 
+			<div data-role="main" class="ui-content">
+
+				<div id="gameOverButtons" >
+				<a id="over_retry_btn" href="#" class="ui-btn rounded crosshatcher" style="color: black !important;">RETRY</a>
+				<a id="over_menu_btn" href="#" class="ui-btn rounded crosshatcher" style="color: black !important;">MAIN MENU</a>
+				<a id="over_exit_btn" href="#" class="ui-btn rounded crosshatcher" style="color: black !important;">EXIT GAME</a>
+				
+				</div>
+
+			</div>
+		</div>
+			
+		<!-- -------- GAMEOVER PAGE END -------- -->
+
+		<div class="countdown" hidden>
+			<div class="countdown-content">
+			<p class="count-num">3</p>
+			</div>
+		</div>
+
+<!-- -------- MENU PAGE -------- -->
+<div data-role='page' id="menu_page">
+	
+
+	<div data-role='main' class="ui-content">
+
+		<div id="sound-on-off">
+			
+		</div>
+
+		<div class="top">
+			<h1 class="crosshatcher center" >HIGHEST SCORE </h1>
+			<h1 class="KGsketch" id="highest_score" style="text-align: center;"></h1>
+		</div>
+
+		<div id="menu_buttons">
+		<a id="startbtn" class="ui-btn transparent rounded crosshatcher size24" href="#single_page">  Single Player </a></button>
+		<a class="ui-btn transparent rounded crosshatcher size24" href="#CSP" >  Versus Mode </a>
+		<a class="ui-btn transparent rounded crosshatcher size24" href="#tut_page">  Tutorial </a>
+		<a id="exitBtn" class="ui-btn transparent rounded crosshatcher size24" href="#">  Exit </a>		
+		</div>
+
+		<div class="bottom">
+		<h1 class="crosshatcher center">Arithmetic</h1>
+		<h1 class="crosshatcher center">Battle</h1>
+		</div>
+	</div>
+
+
+</div>
+
+<!-- -------- MENU PAGE END -------- -->
+
+<!-- -------- CLIENT/SERVER PAGE -------- -->
+<div data-role='page' id="CSP">
+	
+
+	<div data-role='header' class="KGsketch transparent noborder">
+		<a class="ui-btn ui-icon-arrow-l ui-btn-icon-left transparent noborder" style="margin: 7px !important;" href="#menu_page" ></a>
+	</div>
+
+
+	<div data-role='main' class="ui-content">
+
+
+
+
+		<div data-role="main" class="ui-content" id="playerchoose">
+
+		
+			<a href="versus.html#signal-page" class="ui-btn crosshatcher"  rel="external" id="playerone" > Player One</a>
+			
+			<a href="versus.html" class="ui-btn crosshatcher"  rel="external" id="client" >Player Two</a>
+
+		
+		
+			
+
+		</div>
+		
+	</div>
+
+
+</div>
+
+<!-- -------- CLIENT/SERVER PAGE END -------- -->
+
+
+
+<!-- -------- SINGLE PLAYER PAGE -------- -->
+<div data-role='page' id="single_page" style="max-height: 600px;">
+		
+
+	<div data-role='header' class="KGsketch transparent noborder">
+		<a class="ui-btn ui-icon-delete ui-btn-icon-left transparent noborder" style="margin: 7px !important;" href="#" onclick="backPopup();"></a>
+		<h1 style="text-align: right !important; margin-right: 10% !important; ">Score <span id="current_score">0</span></h1>
+	</div>
+
+	<div data-role='main' class="ui-content">
+
+		<div data-role="controlgroup" data-type="horizontal" style="text-align: center;" >
+		
+			<button id="incBtn" class="ui-btn ui-btn-inline" style="margin-right: 25px;"></button>
+
+			<div id="answerBox" class="ui-btn ui-btn-inline" style="margin-right: 25px;"></div>	
+			<button id="decBtn" class="ui-btn ui-btn-inline" > </button>		
+		</div>
+
+		<div class="eq-bar">
+			<input type="text"  id="equationBar" readonly>
+		</div>
+		<div id="mainBoard"></div>
+
+		<div data-role="controlgroup" data-type="horizontal" class="go-and-back" >
+		
+			<button id="backBtn" class="ui-btn ui-btn-inline"  ></button>
+
+			<button id="goBtn" class="ui-btn ui-btn-inline" ></button>	
+
+		</div>
+	
+
+	</div>
+	
+
+</div>
+
+<!-- -------- SINGLE PLAYER PAGE END -------- -->
+
+
+
+
+
+
+
+
+
+
+<!-- -------- TUTORIAL PAGE -------- -->
+<div data-role='page' id="tut_page" class="white">
+	<div data-role='header' class="transparent noborder">
+			<a href="#" class="ui-btn ui-btn-left ui-icon-back ui-btn-icon-left transparent noborder" style="font-size: 25px !important;"  data-rel="back"></a>
+  			<h1 class="white">Tutorial</h1>
+	</div>
+
+	<div data-role='main' class="ui-content" class="white">
+	
+	
+			<h4 class="center">Welcome to Arithmetic Battle Tutorial</h4>
+			<p>Arithmetic Battle is a game to test and improve your arithmetic skills and fast thinking.</p>
+		
+
+		<div data-role="collapsible" data-collapsed-icon="carat-d" data-iconpos="right" >
+ 			 <h1>Show Game Interface</h1>
+ 			 <img src="tutorial_pics/fullboard.JPG" width="100%" />
+		</div>
+
+		<div class="clear"></div>
+
+		
+
+		<div class="tut_element"> 
+			<h4>ELEMENTS OF THE GAME</h4>		
+
+				<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="carat-d" >
+					<h4 ><span style="float: left;"><img class="elem_left" src="tutorial_pics/answerbox.JPG"  /></span> <span > Answer Box </span></h4> 
+
+					<p  style="margin-top: 15px;">The number inside the answer box is randomly generated at the beginning of the game and when you make a correct statement.</p>
+				</div>
+				
+
+				<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="carat-d" >
+					<h4><span style="float: left;"><img class="elem_left" src="tutorial_pics/normal.JPG"  /> </span> <span> Main Objects </span></h4> 
+
+					<p style="margin-top: 15px;">Main Objects are divided into two categories. The Operators and The Operands. The Operators consists of addition , subtraction , multiplication and division. The Operands are the Objects that contains numbers</p>
+
+					<h4>Object States</h4>
+					<p> Main Objects has Three States.Which are Normal state, Disabled State and Highlighted state</p>
+
+
+						<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="carat-d" >
+							<h4><span style="float: left;"><img class="elem_left" src="tutorial_pics/normal.JPG"  /></span> <span> Normal</span></h4> 
+
+							<p style="margin-top: 15px;">If the Background Color of the object is white. this means that the Object is at Normal State, meaning you can tap the object to use it to your statement of equation.</p>
+						</div>
+
+						<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="carat-d" >
+							<h4><span style="float: left;"><img class="elem_left" src="tutorial_pics/disabled.JPG"  /></span> <span> Disabled </span></h4> 
+
+							<p style="margin-top: 15px;">When the Object is disabled you cannot tap or use it. At the Beginning of the game all operators are disabled until you tap an operand. After you tap an operand all operands will now be disabled and all of operators will go to normal state and vice versa.</p>
+						</div>
+
+						<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="carat-d" >
+							<h4><span style="float: left;"><img class="elem_left" src="tutorial_pics/highlighted.JPG"  /></span> <span> Highlighted</span></h4> 
+
+							<p style="margin-top: 15px;"> If an object is highlighted it means that you are using it on your current equation which can be seen at the equation bar. You cannot use the object on your equation if it is already highlighted</p>
+						</div>
+
+				</div>
+
+						<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="carat-d" >
+							<h4><span style="float: left;"><img class="elem_left" src="tutorial_pics/inc.JPG"  /></span> <span> Increment Button </span></h4> 
+
+							<p style="margin-top: 15px;">This button lets you add 1 to the current number in the answer box, but as a consequence it will cause for an additional drop of object.</p>
+						</div>
+
+				
+						<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="carat-d" >
+							<h4><span style="float: left;"><img class="elem_left" src="tutorial_pics/dec.JPG"  /></span> <span> Decrement Button </span></h4> 
+
+							<p style="margin-top: 15px;">This button lets you deduct 1 to the current number in the answer box, but as a consequence it will cause for an additional drop of object.</p>
+						</div>
+
+
+
+						<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="carat-d" >
+							<h4><span ><img class="elem_left" src="tutorial_pics/statement.JPG"   /></span> <span> Equation Bar  </span></h4> 
+
+							<p style="margin-top: 15px;">This serves as a guide to what you had tap in sequence.</p>
+						</div>							
+				
+
+						<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="carat-d" >
+							<h4><span style="float: left;"><img class="elem_left" src="tutorial_pics/backbtn.JPG"  /></span> <span> Back / Delete </span></h4> 
+
+							<p style="margin-top: 15px;">If you tap an object by mistake or you realized you tap the wrong object You can use this button to delete it to the equation bar and then tap the correct object.</p>
+						</div>
+
+						<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="carat-d" >
+							<h4><span style="float: left;"><img class="elem_left" src="tutorial_pics/gobtn.JPG"  /></span> <span> Go / Submit </span></h4> 
+
+							<p style="margin-top: 15px;">Submit the statement or equation in the equation bar. If the answer to your submitted equation is equal to the number inside the Answer Box. You will get a score and the Highlighted objects will be removed from the canvas. </p>
+						</div>
+
+		</div>
+
+		<div class="clear"></div>
+		<br/>
+
+		<div id="solving">
+
+				<div class="tut_div">
+
+					<h3 class="center">Order of precedence in Arithmetic Battle</h3>
+					<h4 class="center">How is it solved?</h4>
+					<p><span class="bold">High priority</span> Division and Multiplication</p>
+					<p><span class="bold">Low priority</span> Addition and Subtraction</p>
+					<p>From Left to right it will compute all of Division and Multiplication first and if there are none left, Again from left to right it will now compute the remaining equation which are Addition and Subtraction. See Below Examples</p>
+				</div>
+
+					
+					<div data-role="collapsible">
+						<h4 class="center">Example 1</h4>
+						<p>2 * 3 /2 +10 /2 = 8</p>
+						<p>6 / 2 + 10 / 2 = 8</p>
+						<p>3 + 10 / 2 = 8 </p>
+						<p>3 + 5 = 8 </p>
+					</div>
+					
+					
+					<div data-role="collapsible">
+						<h4 class="center">Example 2</h4>
+						<p>2 / 3 *2 + 10/2 = 5</p>
+						<p>0 * 2 + 10 / 2 = 5</p>
+						<p>0 + 10 /2 = 5</p>
+						<p>0 + 5 = 5</p>
+					</div>
+
+				<div class="tut_div">	
+					<h3 class="center">TIPS</h3>
+					
+					<p>If your dividend is lower than the divisor the answer will always be 0</p>
+					<p> 5 / 6 = 0</p>
+					<p> 2 / 3 = 0</p>
+
+					<p>If the quotient has remainder disregard the remainder</p>
+					<p>3 / 2 =  1 </p>
+					<p>9 / 5 = 1</p>
+				</div>
+		</div>		
+		
+	</div>
+
+
+	
+</div>
+
+<!-- -------- TUTORIAL PAGE END -------- -->
+
+
+
+
+<script>
+	$(document).ready(function()
+	{
+		
+		
+
+
+		if (location.hash == "" || location.hash == "#menu_page"   )
+		{
+			menuMusic.currentTime = 0;
+			menuMusic.play();
+
+			
+		}
+
+			
+
+	
+		$('.reloadPage').click(function()
+		{
+			menuMusic.currentTime = 0;
+			menuMusic.play();	
+		})
+		
+
+		$('#sound-on-off').click(function()
+		{
+			if (soundison == true)  
+			{
+				$(this).css('background-image' , 'url(Photos/soundoff.png)' );
+				soundison = false;
+				menuMusic.pause();
+				menuMusic.currentTime = 0;
+			}
+			else
+			{
+				$(this).css('background-image' , 'url(Photos/soundon.png)' );
+				soundison = true;
+				menuMusic.play();
+			}
+
+
+		});
+
+		$('.ui-btn').click(function()
+		{
+			btnclick.currentTime = 0;
+			btnclick.play();
+		})
+
+
+	// SCRIPT FOR Go Button ----
+		$('#goBtn').click(function()
+		{	
+			var back_id = arrEquation.length - 1;
+	
+			var queryID = eval("'"+"#"+arrEquation[back_id]+"'");
+			var data = $(queryID).text();
+
+			var charCount = $('#equationBar').val().length ;
+			if (charCount < 3)
+			{
+				errorSE.play();
+			}
+			else if (isNaN(parseInt(data))) 
+			{
+				console.log('Equation should not end with an operator');
+				errorSE.play();
+			}
+			else
+			{
+
+				var equation = $('#equationBar').val();
+				var result = parseInt(eval(equation));
+				console.log(result);
+				var answerBoxData = parseInt($('#answerBox').text());
+				
+				if (result == answerBoxData)
+				{
+					correctSE.play();
+					maxNum++;
+					$('#answerBox').text(getRandomNumber(maxNum,4));
+					current_score++;
+					if (current_score == 5) 
+					{	
+						addoperator = 5 ;
+					}	
+					$('#current_score').text(current_score);
+					
+					speedtrigger++;
+					if (speedtrigger == 2)
+					{
+						fallspeed--;
+						speedtrigger = 0;
+					}
+
+					deleteFromArray();
+					arrEquation.splice(0);
+					$('.highlighted').remove();
+					slideDown();
+					clearStats();
+				} 
+				else
+				{
+					wrongSE.play();
+					console.log('wrong');
+					arrEquation.splice(0);
+					clearStats();
+								
+				}
+			}
+
+		});
+	// END SCRIPT FOR Go Button ----
+		$('#backBtn').click(function()
+		{
+			back();
+		});
+		
+		$('#incBtn').click(function()
+		{
+			inc();
+		});
+
+		$('#decBtn').click(function()
+		{
+			dec();
+		});
+
+		$('#over_retry_btn').click(function()
+		{
+			window.location.reload();
+			
+			
+		});
+
+		$('#over_menu_btn').click(function()
+		{
+			window.location.href = '#menu_page';
+			location.reload(true);
+			
+		});
+
+		$('#over_exit_btn').click(function()
+		{
+			exitAppPopup();
+			
+		});
+
+		$('#exitBtn').click(function()
+		{
+			exitAppPopup();
+		});
+
+		$('#rematch_btn').click(function()
+		{
+			rematch();
+		});
+
+		$('.count-num').click(function()
+		{
+			countdown();
+		})
+
+		$('#startbtn').click(function()
+		{
+			menuMusic.pause();
+			menuMusic.currentTime = 0;
+		});
+	
+
+	});
+
+	$('#single_page').on("pagecreate",function(event)
+		{
+			$('.countdown').show();
+ 		 	countdown();
+		});
+
+document.addEventListener("deviceready", deviceisready, false);
+
+function deviceisready(){
+    //alert("Device Ready is called");
+   // navigator.splashscreen.show();
+   //----------cordova httpd 
+   	
+    
+//    $('#client').click(function()
+//    {
+//    	startServer('versus');
+ //   });
+
+    document.addEventListener("backbutton", function(e)
+    {
+       
+            exitAppPopup();
+       
+    });
+
+   var hs = window.localStorage.getItem("highscore");
+  
+   if (hs == null)
+   {
+   		hs = 0;
+   }
+   
+   $('#highest_score').text(hs);   
+
+
+};
+
+function exitAppPopup() {
+    navigator.notification.confirm(
+        "Do you really want to close this app?", 
+        function(buttonIndex){
+            ConfirmExit(buttonIndex);
+        }, 
+        "Confirmation", 
+        "Yes,No"
+    ); 
+   // alert("Outside Notification"); 
+    //return false;
+};
+
+function ConfirmExit(stat){
+   // alert("Inside ConfirmExit");
+    if(stat == "1"){
+        navigator.app.exitApp();
+    }else{
+        return;
+    };
+};
+
+function backPopup() {
+    navigator.notification.confirm(
+        "Are You sure? Progress will be lost.", 
+        function(buttonIndex){
+            ConfirmBack(buttonIndex);
+        }, 
+        "Confirmation", 
+        "Yes,No"
+    ); 
+   // alert("Outside Notification"); 
+    //return false;
+};
+
+function ConfirmBack(stat){
+   // alert("Inside ConfirmExit");
+    if(stat == "1"){
+        window.location.href= "#menu_page";
+        location.reload(true);
+    }else{
+        return;
+    };
+};
+
+
+</script>
+
+
+
+
+</body>
+</html>
+
+
