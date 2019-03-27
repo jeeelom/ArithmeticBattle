@@ -12,4 +12,5 @@ Sample APK https://github.com/jeeelom/ArithmeticBattle/tree/master/platforms/and
 Try on Browser(Versus mode does not work on browser)
 
 $npm install
+
 $cordova run browser
